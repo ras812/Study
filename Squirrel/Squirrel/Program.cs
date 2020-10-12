@@ -8,11 +8,11 @@ namespace Level1Space
 {
     public static class Level1
     {
-        public static int Squirrel(int n)
+        int squirrel(int N)
         {
             // факториал
             int factorial = 1;
-            for (int i = 1; i < (n + 1); i++)
+            for (int i = 1; i < (N + 1); i++)
             {
                 factorial = factorial * i;
             }
