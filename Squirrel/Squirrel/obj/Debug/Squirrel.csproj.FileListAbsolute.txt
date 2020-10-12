@@ -1,0 +1,7 @@
+E:\Programing\Repos\Squirrel\Squirrel\bin\Debug\Squirrel.exe.config
+E:\Programing\Repos\Squirrel\Squirrel\bin\Debug\Squirrel.exe
+E:\Programing\Repos\Squirrel\Squirrel\bin\Debug\Squirrel.pdb
+E:\Programing\Repos\Squirrel\Squirrel\obj\Debug\Squirrel.csprojAssemblyReference.cache
+E:\Programing\Repos\Squirrel\Squirrel\obj\Debug\Squirrel.csproj.CoreCompileInputs.cache
+E:\Programing\Repos\Squirrel\Squirrel\obj\Debug\Squirrel.exe
+E:\Programing\Repos\Squirrel\Squirrel\obj\Debug\Squirrel.pdb
