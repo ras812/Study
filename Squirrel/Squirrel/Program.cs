@@ -8,7 +8,7 @@ namespace Level1Space
 {
     public static class Level1
     {
-        int squirrel(int N)
+        public static int squirrel(int N)
         {
             // факториал
             int factorial = 1;
