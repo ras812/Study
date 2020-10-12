@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Squirrel
+namespace Level1Space
 {
-    class Program
+    public static class Level1
     {
         public static int Squirrel(int n)
         {
@@ -29,10 +29,10 @@ namespace Squirrel
             return m;
         }
 
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             Console.WriteLine(Squirrel(10));
             Console.ReadKey();
-        }
+        }*/
     }
 }
