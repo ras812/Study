@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConquestCampaign
+namespace Level1Space
 {
-    class Level1
+    public static class Level1
     {
-        int ConquestCampaign(int N, int M, int L, int[] battalion)
+        public static int ConquestCampaign(int N, int M, int L, int[] battalion)
         {
             int[,] battleGround = new int[N, M];
             int captured = 0;
