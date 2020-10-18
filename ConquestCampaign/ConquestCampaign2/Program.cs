@@ -46,7 +46,7 @@ namespace ConquestCampaign
             // end PrintBattleGround
 
             // Captured
-            int Captured(int[,] arr)
+            /*int Captured(int[,] arr)
             {
 
                 for (int i = 0; i < battleGround.GetLength(0); i++)
@@ -62,11 +62,11 @@ namespace ConquestCampaign
                     }
                 }
                 return 1;
-            }
+            }*/
             // end Captured
 
             // Battle
-            int[,] Battle(ref int[,] arr)
+            /*int[,] Battle(ref int[,] arr)
             {
 
                 for (int i = 0; i < arr.GetLength(0); i++)
@@ -136,7 +136,7 @@ namespace ConquestCampaign
                 }
 
                 return arr;
-            }
+            }*/
             // end Battle
 
             // END FUNCTIONS
@@ -250,6 +250,19 @@ namespace ConquestCampaign
 
                 countDays++;
                 // PrintBattleGround(battleGround);
+
+                /*Console.WriteLine("Today is {0} battle day", countDays);
+
+                for (int i = 0; i < battleGround.GetLength(0); i++)
+                {
+
+                    for (int j = 0; j < battleGround.GetLength(1); j++)
+                    {
+                        Console.Write(battleGround[i, j] + " ");
+                    }
+                    Console.WriteLine();
+                }
+                Console.WriteLine();*/
             }
 
             return countDays;
