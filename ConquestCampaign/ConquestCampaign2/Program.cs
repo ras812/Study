@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConquestCampaign
 {
-    public static class Level1
+    class Level1
     {
-        public static int ConquestCampaign(int N, int M, int L, int[] battalion)
+        int ConquestCampaign(int N, int M, int L, int[] battalion)
         {
             int[,] battleGround = new int[N, M];
             int captured = 0;
