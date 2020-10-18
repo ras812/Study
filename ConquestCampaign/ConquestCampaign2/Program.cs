@@ -49,6 +49,24 @@ namespace Level1Space
                     for (int j = 0; j < battleGround.GetLength(1); j++)
                     {
 
+                        if (battleGround[i, j] == 0)
+                        {
+                            captured = 0; // not captured
+                            break;
+                        }
+                        else
+                        {
+                            captured = 1;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < battleGround.GetLength(0); i++)
+                {
+
+                    for (int j = 0; j < battleGround.GetLength(1); j++)
+                    {
+
                         if (battleGround[i, j] == 2)
                         {
 
@@ -109,26 +127,17 @@ namespace Level1Space
                     }
                 }
 
-                for (int i = 0; i < battleGround.GetLength(0); i++)
+                if (captured == 0)
                 {
-
-                    for (int j = 0; j < battleGround.GetLength(1); j++)
-                    {
-
-                        if (battleGround[i, j] == 0)
-                        {
-                            captured = 0; // not captured
-                            break;
-                        }
-                        else
-                        {
-                            captured = 1;
-                        }
-                    }
+                    countDays++;
+                }
+                else
+                {
+                    break;
                 }
                 
-
-                countDays++;
+                
+                
                 // PrintBattleGround
 
                 /*Console.WriteLine("Today is {0} battle day", countDays);
@@ -150,8 +159,8 @@ namespace Level1Space
 
         /*static void Main(string[] args)
         {
-            int[] arr = { 2, 2, 3, 4 };
-            Console.WriteLine(ConquestCampaign(3, 4, 2, arr));
+            int[] arr = { 1,1,1,2,1,3,2,1,2,2,2,3 };
+            Console.WriteLine(ConquestCampaign(2,3,6, arr));
             Console.ReadKey();
         }*/
     }
