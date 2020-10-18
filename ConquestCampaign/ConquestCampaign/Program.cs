@@ -8,6 +8,7 @@ namespace ConquestCampaign
 {
     public static class Level1
     {
+
         public static int ConquestCampaign(int N, int M, int L, int[] battalion)
         {
             int[,] battleGround = new int[N, M];
@@ -27,7 +28,7 @@ namespace ConquestCampaign
             // FUNCTIONS
 
             // PrintBattleGround
-            void PrintBattleGround(int[,] arr)
+            /*void PrintBattleGround(int[,] arr)
             {
                 Console.WriteLine("Today is {0} battle day", countDays);
 
@@ -41,7 +42,7 @@ namespace ConquestCampaign
                     Console.WriteLine();
                 }
                 Console.WriteLine();
-            }
+            }*/
             // end PrintBattleGround
 
             // Captured
@@ -156,7 +157,7 @@ namespace ConquestCampaign
 
             // print array battleGround[]
 
-            PrintBattleGround(battleGround);
+            // PrintBattleGround(battleGround);
 
             // capture
             
@@ -164,7 +165,7 @@ namespace ConquestCampaign
             {
                 Battle(ref battleGround);
                 countDays++;
-                PrintBattleGround(battleGround);
+                // PrintBattleGround(battleGround);
             }
 
             return countDays;
