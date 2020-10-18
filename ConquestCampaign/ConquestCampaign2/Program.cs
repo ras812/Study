@@ -12,6 +12,7 @@ namespace ConquestCampaign
         public static int ConquestCampaign(int N, int M, int L, int[] battalion)
         {
             int[,] battleGround = new int[N, M];
+            int captured = 0;
             int countDays = 1;
 
             // create battle ground
@@ -24,7 +25,7 @@ namespace ConquestCampaign
                     battleGround[i, j] = 0;
                 }
             }
-
+            #region
             // FUNCTIONS
 
             // PrintBattleGround
@@ -140,7 +141,7 @@ namespace ConquestCampaign
             // end Battle
 
             // END FUNCTIONS
-
+            #endregion
             // 0 - not captured
             // 1 - marked for catpure
             // 2 - captured and catpure from this point
@@ -155,12 +156,8 @@ namespace ConquestCampaign
                 }
             }
 
-            // print array battleGround[]
-
-            // PrintBattleGround(battleGround);
-
             // capture
-            int captured = 0;
+            
             while (captured == 0)
             {
                 for (int i = 0; i < battleGround.GetLength(0); i++)
