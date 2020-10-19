@@ -81,7 +81,7 @@ namespace Level1Space
 
         }
 
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             int[] madMaxArr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 };
             //MadMax(9, madMaxArr);
@@ -99,6 +99,6 @@ namespace Level1Space
 
 
             Console.ReadKey();
-        }
+        }*/
     }
 }
