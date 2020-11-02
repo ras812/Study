@@ -48,11 +48,9 @@ namespace Level1Space
 
             }
 
-
             itog = Convert.ToInt32(sum * 100000);
 
             digitNums = Convert.ToString(sum).Length;
-
 
             for (int i = 0; i < digitNums; i++)
             {
@@ -85,12 +83,12 @@ namespace Level1Space
             return itogString;
         }
 
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             int[] arr = { 1, 2, 3, 4, 5, 6, 2, 7, 2, 9 };
             Console.WriteLine(PatternUnlock(0, arr));
 
             Console.ReadKey();
-        }
+        }*/
     }
 }
