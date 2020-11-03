@@ -50,7 +50,7 @@ namespace Level1Space
                 }
 
                 sum = sum + n;
-                Console.WriteLine("Sum: {0}", sum);
+                // Console.WriteLine("Sum: {0}", sum);
             }
 
             itog = Convert.ToInt32(sum * 100000);
@@ -68,7 +68,7 @@ namespace Level1Space
 
                 itog = itog / 10;
 
-                Console.WriteLine("Remove zero: {0}", tempNum);
+                // Console.WriteLine("Remove zero: {0}", tempNum);
             }
 
             digitNums = Convert.ToString(tempNum).Length;
@@ -79,7 +79,7 @@ namespace Level1Space
                 lastDigit = tempNum % 10;
                 itog = itog * 10 + lastDigit;
                 tempNum = tempNum / 10;
-                Console.WriteLine("Revers: {0}",itog);
+                // Console.WriteLine("Revers: {0}",itog);
             }
 
             itogString = Convert.ToString(itog);
