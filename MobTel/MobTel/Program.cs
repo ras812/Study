@@ -46,12 +46,14 @@ namespace Level1Space
                     ((hits[i] == 1 || hits[i] == 3) && (hits[i+1] == 5 || hits[i+1] == 8))
                    )
                 {
-                    n=1.41421;
+                    n = Math.Sqrt(2);
                 }
 
                 sum = sum + n;
-                Console.WriteLine("Sum: {0}", sum);
+                // Console.WriteLine("Sum: {0}", sum);
             }
+
+            sum = Math.Round(sum, 5);
 
             itog = Convert.ToInt32(sum * 100000);
 
@@ -68,7 +70,7 @@ namespace Level1Space
 
                 itog = itog / 10;
 
-                Console.WriteLine("Remove zero: {0}", tempNum);
+                // Console.WriteLine("Remove zero: {0}", tempNum);
             }
 
             digitNums = Convert.ToString(tempNum).Length;
@@ -79,7 +81,7 @@ namespace Level1Space
                 lastDigit = tempNum % 10;
                 itog = itog * 10 + lastDigit;
                 tempNum = tempNum / 10;
-                Console.WriteLine("Revers: {0}",itog);
+                // Console.WriteLine("Revers: {0}",itog);
             }
 
             itogString = Convert.ToString(itog);
@@ -87,12 +89,12 @@ namespace Level1Space
             return itogString;
         }
 
-        /*static void Main(string[] args)
+        static void Main(string[] args)
         {
-            int[] arr = { 1, 9 };
+            int[] arr = { 1, 2, 3, 4, 5, 6, 2, 7, 8, 9 };
             Console.WriteLine("Result: {0}", PatternUnlock(0, arr));
-
+            Console.WriteLine(Math.Sqrt(2));
             Console.ReadKey();
-        }*/
+        }
     }
 }
