@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GooSearch", "GooSearch\GooSearch.csproj", "{0063716C-423C-4BD8-8C19-FF568A78AEDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GooSearch_1", "GooSearch_1\GooSearch_1.csproj", "{79E6DB35-AC60-48F6-AADC-F494A6357DC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0063716C-423C-4BD8-8C19-FF568A78AEDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0063716C-423C-4BD8-8C19-FF568A78AEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0063716C-423C-4BD8-8C19-FF568A78AEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0063716C-423C-4BD8-8C19-FF568A78AEDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79E6DB35-AC60-48F6-AADC-F494A6357DC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79E6DB35-AC60-48F6-AADC-F494A6357DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79E6DB35-AC60-48F6-AADC-F494A6357DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79E6DB35-AC60-48F6-AADC-F494A6357DC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A480B5E-06D1-429E-A00F-06DF550A2F92}
+	EndGlobalSection
+EndGlobal
