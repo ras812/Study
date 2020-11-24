@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace SortSpace
 {
-    public static class SortLevel
+    public static class Level1
     {
         public static int[] WordSearch(int len, string s, string subs)
         {
