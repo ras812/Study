@@ -12,7 +12,7 @@ namespace SortSpace
             // динамический массив (неопределенного колиичества элементов)
             ArrayList arr = new ArrayList();
             // флаг - то место в строке, где будем прерывать работу цикла
-            int flag = 0;   
+            int flag = 0;
 
             // цикл прохода по строке. Обрезаем с начала основной строки символы, пока в основной строке есть символы.
             while (s.Length > 0)
@@ -59,6 +59,13 @@ namespace SortSpace
             // конвертируем из динамического массива arr в массив фиксированной длинны arrString
             string[] arrString = (string[])arr.ToArray(typeof(string));
 
+            // for (int i = 0; i < arrString.Length; i++)
+            // {
+            //    Console.WriteLine("arrString: " + arrString[i]);
+            // }
+
+            // Console.WriteLine("s: " + s);
+
             // создаем массив с итоговыми значениями
             int[] search = new int[arrString.Length];
             // буферная строка для сравнения значений
@@ -74,7 +81,7 @@ namespace SortSpace
                         compareString = compareString + arrString[i][j];
                     }
 
-                    if (arrString[i][j] == ' ' || j+1 == arrString[i].Length)   // если пробел или конец строки, то проверяем на соответствие
+                    if (arrString[i][j] == ' ' || j + 1 == arrString[i].Length)   // если пробел или конец строки, то проверяем на соответствие
                     {
                         if (compareString.Equals(subs) == true)
                         {
@@ -91,12 +98,28 @@ namespace SortSpace
 
                         continue;
                     }
-                    
+
                 }
 
             }
 
+            // for (int i = 0; i < search.Length; i++)
+            // {
+            //    Console.WriteLine(search[i]);
+            // }
+
             return search;
         }
+        // static void Main(string[] args)
+        // {
+        //    string s = "Пустые строки в такой разбивке полностью исключаются. Если ширина разбивки меньше какого-то слова, то это слово разбивается на несколько (с переносом на следующую строку).";
+        //    string subs = "слово";
+        //    int[] rez = WordSearch(10, s, subs);
+        //    for (int i = 0; i < rez.Length; i++)
+        //    {
+        //        Console.WriteLine(rez[i]);
+        //    }
+        //    Console.ReadKey();
+        // }
     }
 }
