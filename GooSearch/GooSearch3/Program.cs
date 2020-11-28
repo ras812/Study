@@ -14,11 +14,13 @@ namespace Level1Space
             // флаг - то место в строке, где будем прерывать работу цикла
             int flag = 0;
 
+            // Console.WriteLine("Начальное значение базовой строки: " + s);
+
             // цикл прохода по строке. Обрезаем с начала основной строки символы, пока в основной строке есть символы.
             while (s.Length > 0)
             {
                 // если первый символ "пробел", то удаляем его из строки
-                if (s[0] == '0')
+                if (s[0] == ' ')
                 {
                     s = s.Remove(0, 1);
                     continue;
@@ -27,18 +29,18 @@ namespace Level1Space
                 else
                 {
                     // чтоб не запутаться, приводим все значения к "индексам"
-                    if (len - 1 < s.Length - 1)    // индексы символов (индексы разбивки меньше последнего индекса строки)
+                    if (s.Length - 1 > len - 1)    // индексы символов (индексы разбивки меньше последнего индекса строки)
                     {
                         flag = 0;   // обнуляем флаг в начале каждого нового цикла
 
                         for (int i = 0; i < len; i++)   // проходим по отрезку длинной в len
                         {
-                            if (s[i] == '0')    // если находим пробел
+                            if (s[i] == ' ')    // если находим пробел
                             {
                                 flag = i;   // записываем во флаг индекс (количество символов будет больше на +1)
                             }
 
-                            else if (flag == 0) // если флаг не менял значений, значит пробелов небыло и придется обрезать строку в одно слово по длинне обрезки
+                            else if (flag == 0 || (s[i] != ' ' && s[i + 1] == ' ')) // если флаг не менял значений, значит пробелов небыло и придется обрезать строку в одно слово по длинне обрезки
                             {
                                 flag = len;
                             }
@@ -46,7 +48,7 @@ namespace Level1Space
 
                     }
 
-                    else if (len - 1 >= s.Length - 1)   // индексы символов
+                    else if (s.Length - 1 <= len - 1)   // индексы символов
                     {
                         flag = s.Length; // количество символов (обрезаем остаток строки)
                     }
@@ -59,12 +61,14 @@ namespace Level1Space
             // конвертируем из динамического массива arr в массив фиксированной длинны arrString
             string[] arrString = (string[])arr.ToArray(typeof(string));
 
-             for (int i = 0; i < arrString.Length; i++)
-             {
-                Console.WriteLine("arrString: " + arrString[i]);
-             }
+            // Console.WriteLine("Формирование массива с разбивкой строк по ширине {0} символов.", len);
 
-             Console.WriteLine("s: " + s);
+            // for (int i = 0; i < arrString.Length; i++)
+            // {
+            //     Console.WriteLine("Значение {0} элемента массива: " + arrString[i], i);
+            // }
+
+            // Console.WriteLine("Значение базовой строки после разбивки: " + s);
 
             // создаем массив с итоговыми значениями
             int[] search = new int[arrString.Length];
@@ -76,12 +80,12 @@ namespace Level1Space
 
                 for (int j = 0; j < arrString[i].Length; j++)
                 {
-                    if (arrString[i][j] != '0') // добавляем символы в буферную строку
+                    if (arrString[i][j] != ' ') // добавляем символы в буферную строку
                     {
                         compareString = compareString + arrString[i][j];
                     }
 
-                    if (arrString[i][j] == '0' || j + 1 == arrString[i].Length)   // если пробел или конец строки, то проверяем на соответствие
+                    if (arrString[i][j] == ' ' || j + 1 == arrString[i].Length)   // если пробел или конец строки, то проверяем на соответствие
                     {
                         if (compareString.Equals(subs) == true)
                         {
@@ -96,28 +100,33 @@ namespace Level1Space
                             compareString = null;
                         }
 
-                        continue;
                     }
 
                 }
 
             }
 
-             // for (int i = 0; i < search.Length; i++)
-             // {
-             //    Console.WriteLine(search[i]);
-             // }
-
             return search;
         }
-         static void Main(string[] args)
-         {
-            int[] rez = WordSearch(12, "1)0stroka0razbivaetsya0na0nabor0strok0cherez0vyravnivanie0po0zadannoj0shirine.", "strok");
-            for (int i = 0; i < rez.Length; i++)
-            {
-                Console.WriteLine(rez[i]);
-            }
-            Console.ReadKey();
-         }
+        // static void Main(string[] args)
+        // {
+            // string s = "1) stroka razbivaetsya na nabor strok cherez vyravnivanie po zadannoj shirine.";
+            // string sub = "strok";
+            // string s = "12345";
+            // string sub = "345";
+            // int[] rez = WordSearch(12, s, sub);
+            // for (int i = 0; i < rez.Length; i++)
+            // {
+                // if (rez[i] == 1)
+                // {
+                    // Console.WriteLine("Значение {0} найдено в строке с индексом {1}.", sub, i);
+                // }
+                // else
+                // {
+                    // Console.WriteLine("Значение {0} не найдено в строке с индексом {1}.", sub, i);
+                // }
+            // }
+            // Console.ReadKey();
+        // }
     }
 }
