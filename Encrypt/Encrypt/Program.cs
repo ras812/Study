@@ -63,6 +63,7 @@ namespace Level1Space
                 resString = null;
                 for (int j = 0; j < matrix.GetUpperBound(1) + 1; j++)
                 {
+
                     for (int i = 0; i < matrix.GetUpperBound(0) + 1; i++)
                     {
                         resString = resString + matrix[i, count];
@@ -92,7 +93,7 @@ namespace Level1Space
 
                 // создаем матрицу символов
                 // строки матрицы
-                matrixSqrtMin = Convert.ToInt32(Math.Floor(Math.Sqrt(sNoSpace.Length))); 
+                matrixSqrtMin = Convert.ToInt32(Math.Floor(Math.Sqrt(sNoSpace.Length)));
 
                 // столбцы матрицы
                 matrixSqrtMax = Convert.ToInt32(Math.Ceiling(Math.Sqrt(sNoSpace.Length)));
@@ -131,13 +132,13 @@ namespace Level1Space
                         count++;
                     }
                 }
-                
+
                 // формируем результирующую строку
                 count = 0;
                 resString = null;
                 for (int i = 0; i < matrix.GetUpperBound(0) + 1; i++)
                 {
-                    
+
                     for (int j = 0; j < matrix.GetUpperBound(1) + 1; j++)
                     {
                         if (count > sNoSpace.Length - 1)
@@ -147,7 +148,7 @@ namespace Level1Space
                         resString = resString + matrix[i, j];
                         count++;
                     }
-                    
+
                 }
 
             }
@@ -155,14 +156,48 @@ namespace Level1Space
             return resString;
         }
 
-         static void Main(string[] args)
-         {
-             string s = "отдай мою кроличью лапку";
-             bool encode = true;
-            // string s = "омоюу толл дюиа акчп йрьк";
-            // bool encode = false;
-             Console.WriteLine(TheRabbitsFoot(s , encode));
-         }
+        /*
+        public static class Testing
+        {
+            private static string s = null;
+            private static bool encode = true;
+
+            public static void Test()
+            {
+                Console.WriteLine("Тест функции TheRabbitsFoot:");
+                s = "отдай мою кроличью лапку";
+                encode = true;
+                Console.WriteLine("Начальная строка: {0}", s);
+                Console.WriteLine("Результирующая строка: {0}",TheRabbitsFoot(s, encode));
+                s = "омоюу толл дюиа акчп йрьк";
+                encode = false;
+                Console.WriteLine("Начальная строка: {0}", s);
+                Console.WriteLine("Результирующая строка: {0}", TheRabbitsFoot(s, encode));
+                s = "The quick brown fox jumps over the lazy dog";
+                encode = true;
+                Console.WriteLine("Начальная строка: {0}", s);
+                Console.WriteLine("Результирующая строка: {0}", TheRabbitsFoot(s, encode));
+                s = "Tcnmrz hkfpty eboshd qrxoeo uojvlg iwuea";
+                encode = false;
+                Console.WriteLine("Начальная строка: {0}", s);
+                Console.WriteLine("Результирующая строка: {0}", TheRabbitsFoot(s, encode));
+                s = "Расшифровка зашифрованной строки не даёт исходный результат";
+                encode = true;
+                Console.WriteLine("Начальная строка: {0}", s);
+                Console.WriteLine("Результирующая строка: {0}", TheRabbitsFoot(s, encode));
+                s = "Рврсддл акотань саврёыт шзаотйа ианкирт фшнисе  рионхз офйеоу";
+                encode = false;
+                Console.WriteLine("Начальная строка: {0}", s);
+                Console.WriteLine("Результирующая строка: {0}", TheRabbitsFoot(s, encode));
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            Testing.Test();
+            Console.ReadKey();
+        }
+        */
     }
-    
+
 }
