@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Level1Space
 {
@@ -57,14 +58,33 @@ namespace Level1Space
                         count++;
                     }
                 }
+                /*
+                for (int i = 0; i < matrix.GetUpperBound(0) + 1; i++)
+                {
+                    for (int j = 0; j < matrix.GetUpperBound(1) + 1; j++)
+                    {
+                        Console.Write(matrix[i, j]);
+                    }
+                    Console.WriteLine();
+                }*/
+
 
                 // формируем строку по правилу "символы по столбцам добавляя в конце пробел"
                 count = 0;
+                stop = 0;
                 resString = null;
                 for (int j = 0; j < matrix.GetUpperBound(1) + 1; j++)
                 {
+                    if (j < sNoSpace.Length % matrixSqrtMax)
+                    {
+                        stop = matrixSqrtMin;
+                    }
+                    else
+                    {
+                        stop = matrixSqrtMin - 1;
+                    }
 
-                    for (int i = 0; i < matrix.GetUpperBound(0) + 1; i++)
+                    for (int i = 0; i < stop; i++)
                     {
                         resString = resString + matrix[i, count];
                     }
@@ -156,7 +176,7 @@ namespace Level1Space
             return resString;
         }
 
-        /*
+        
         public static class Testing
         {
             private static string s = null;
@@ -165,15 +185,17 @@ namespace Level1Space
             public static void Test()
             {
                 Console.WriteLine("Тест функции TheRabbitsFoot:");
-                s = "отдай мою кроличью лапку";
+                Console.WriteLine("Зашифровка строки");
+                s = "otdaj mou kroli41u lapky";
                 encode = true;
                 Console.WriteLine("Начальная строка: {0}", s);
                 Console.WriteLine("Результирующая строка: {0}",TheRabbitsFoot(s, encode));
-                s = "омоюу толл дюиа акчп йрьк";
+                Console.WriteLine("Расшифровка строки");
+                s = "omouy toll duia ak4p jr1k";
                 encode = false;
                 Console.WriteLine("Начальная строка: {0}", s);
                 Console.WriteLine("Результирующая строка: {0}", TheRabbitsFoot(s, encode));
-                s = "The quick brown fox jumps over the lazy dog";
+                /*s = "The quick brown fox jumps over the lazy dog";
                 encode = true;
                 Console.WriteLine("Начальная строка: {0}", s);
                 Console.WriteLine("Результирующая строка: {0}", TheRabbitsFoot(s, encode));
@@ -189,6 +211,15 @@ namespace Level1Space
                 encode = false;
                 Console.WriteLine("Начальная строка: {0}", s);
                 Console.WriteLine("Результирующая строка: {0}", TheRabbitsFoot(s, encode));
+                s = "Расши зашиф строк недаё исход резул";
+                encode = true;
+                Console.WriteLine("Начальная строка: {0}", s);
+                Console.WriteLine("Результирующая строка: {0}", TheRabbitsFoot(s, encode));
+                s = "Рарад ашоёр сикие шфнсз исеху зтдол";
+                encode = false;
+                Console.WriteLine("Начальная строка: {0}", s);
+                Console.WriteLine("Результирующая строка: {0}", TheRabbitsFoot(s, encode));*/
+
             }
         }
 
@@ -197,7 +228,7 @@ namespace Level1Space
             Testing.Test();
             Console.ReadKey();
         }
-        */
+        
     }
 
 }
