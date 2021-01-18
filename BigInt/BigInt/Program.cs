@@ -72,13 +72,13 @@ namespace Level1Space
             int flag = 0;
             for (int i = 0; i < result.Length; i++)
             {
-                if (flag == 0 && i == result.Length - 1)
-                {
-                    res = "0";
-                }
-
+                
                 if (result[i] == '0' && flag == 0)
                 {
+                    if (i == result.Length - 1)
+                    {
+                        res = "0";
+                    }
                     flag = 0;
                     continue;
                 }
