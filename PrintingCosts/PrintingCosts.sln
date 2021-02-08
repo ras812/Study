@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintingCosts", "PrintingCosts\PrintingCosts.csproj", "{D41F3BD1-6C65-4531-8659-8317F358A063}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintingCosts1", "PrintingCosts1\PrintingCosts1.csproj", "{BB1FB73C-224C-415A-9FD6-A68588E20BEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D41F3BD1-6C65-4531-8659-8317F358A063}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D41F3BD1-6C65-4531-8659-8317F358A063}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D41F3BD1-6C65-4531-8659-8317F358A063}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB1FB73C-224C-415A-9FD6-A68588E20BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB1FB73C-224C-415A-9FD6-A68588E20BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB1FB73C-224C-415A-9FD6-A68588E20BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB1FB73C-224C-415A-9FD6-A68588E20BEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

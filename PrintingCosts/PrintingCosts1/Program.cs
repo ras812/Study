@@ -35,29 +35,6 @@ namespace Level1Space
                 }
             }
 
-            /*int sum = 0;
-            for (int i = 0; i < keys.GetUpperBound(1) + 1; i++)
-            {
-                sum = sum + keys[1, i];
-            }
-            Console.WriteLine(sum);
-
-            string s = null;
-            for (int i = 0; i < array.GetUpperBound(1) + 1; i++)
-            {
-                s = s + array[0, i];
-            }
-            Console.WriteLine(s);*/
-
-            /*for (int i = 0; i < keys.GetUpperBound(0) + 1; i++)
-            {
-                for (int j = 0; j < keys.GetUpperBound(1) + 1; j++)
-                {
-                    Console.Write(" " + keys[i, j]);
-                }
-                Console.WriteLine();
-            }*/
-
             for (int i = 0; i < Line.Length; i++)
             {
                 for (int j = 0; j < keys.GetUpperBound(1) + 1; j++)
@@ -80,50 +57,7 @@ namespace Level1Space
                     }
                 }
             }
-
             return res;
         }
     }
-
-    /*public static class Testing
-    {
-        public static void Test()
-        {
-            // string Line = null;
-            // bool b;
-            // Line = "B>DJPV";
-            // b = Printing.PrintingCosts(Line) == 125;
-            // Console.WriteLine(b);
-            // Line = " &,28";
-            // b = Printing.PrintingCosts(Line) == 76;
-            // Console.WriteLine(b);
-            // Line = " &,28>DJPV\\bhntz!'-39?EKQW]ciou{\"(.4:@FLRX^djpv|#)/5;AGMSY_ekqw}$*06<BHNTZ`flrx~%+17=CIOU[agmsy";
-            // b = Printing.PrintingCosts(Line) == 1757;
-            // Console.WriteLine(Printing.PrintingCosts(Line));
-            // Console.WriteLine(b);
-
-        }
-    }*/
-     
-    /*class Program
-    {
-        static void Main(string[] args)
-        {
-            Testing.Test();
-            // Console.Write(Convert.ToUInt16(Convert.ToChar("\u005C")));
-            // Console.Write(Convert.ToChar(92));
-            // Console.Write(Convert.ToUInt16("10"));
-            // Printing.PrintingCosts("abc");
-            // string Line = @"\";
-            // ASCIIEncoding ascii = new ASCIIEncoding();
-            // Byte[] encodedBytes = ascii.GetBytes(Line);
-            // for (int i = 0; i < encodedBytes.Length; i++)
-            // {
-            //    Console.Write(" " + encodedBytes[i]);
-            // }
-            // string s = Console.ReadLine();
-            // Console.WriteLine(s);
-            // Console.ReadKey();
-        }
-    }*/
 }
