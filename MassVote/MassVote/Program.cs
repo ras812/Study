@@ -10,46 +10,97 @@ namespace MassVote
         public static string MassVote(int N, int[] Votes)
         {
             string rezStr = null;
-            int flag = 0;
+            int[] votesReserv = new int [Votes.Length];
+            int votesMax = 0;
+            int z = 0;
 
             if (Votes.Length == 1)
             {
                 rezStr = "majority winner 1";
             }
-            else
+            else if (Votes.Length > 1)
             {
-                if()
-            }
-
-
-            for (int i = 0; i < Votes.Length; i++)
-            {
-                for (int j = 0; j < Votes.Length; j++)
+                for (int i = 0; i < Votes.Length; i++)
                 {
-                    if (i == j)
-                    {
-                        continue;
-                    }
+                    votesReserv[i] = Votes[i];
+                }
 
-                    if (Votes[i] == Votes[j])
+                z = votesReserv[0];
+                for (int i = 0; i < votesReserv.Length; i++)
+                {
+                    for (int j = 1; j < votesReserv.Length; j++)
                     {
-                        flag = 1;
-                        break;
+                        if (votesReserv[j] >= votesReserv[j - 1])
+                        {
+                            z = votesReserv[j - 1];
+                            votesReserv[j - 1] = votesReserv[j];
+                            votesReserv[j] = z;
+                        }
                     }
                 }
-            }
-            Console.WriteLine(flag);
 
-            Console.WriteLine(rezStr);
-            return null;
+                // for (int i = 0; i < votesReserv.Length; i++)
+                // {
+                //     Console.Write("{0} ", votesReserv[i]);
+                // }
+                // Console.WriteLine();
+
+                if (votesReserv[0] == votesReserv[1])
+                {
+                    rezStr = "no winner";
+                }
+
+                else
+                {
+                    votesMax = Votes[0];
+                    int k = 1;
+                    for (int i = 1; i < Votes.Length; i++)
+                    {
+                        if (Votes[i] >= votesMax)
+                        {
+                            votesMax = Votes[i];
+                            k = i + 1;
+                        }
+                    }
+                    Console.WriteLine(votesMax);
+                    Console.WriteLine(k);
+                    int sum = 0;
+                    for (int i = 0; i < Votes.Length; i++)
+                    {
+                        sum = sum + Votes[i];
+                    }
+
+                    Console.WriteLine(sum);
+
+                    double percent = (Convert.ToDouble(votesMax) / Convert.ToDouble(sum)) * 100000;
+                    Console.WriteLine(percent);
+                    percent = Math.Round(percent, 0);
+                    Console.WriteLine(percent);
+                    percent = percent / 1000;
+                    Console.WriteLine(percent);
+
+                    if (percent > Convert.ToDouble(50))
+                    {
+                        rezStr = "majority winner " + k;
+                    }
+                    else if (percent <= Convert.ToDouble(50))
+                    {
+                        rezStr = "minority winner " + k;
+                    }
+
+                }
+
+            }
+
+            return rezStr;
         }
     }
     class Program
     {
         static void Main(string[] args)
         {
-            int[] Vot = { 10, 15, 10, 5 };
-            Vote.MassVote(4, Vot);
+            int[] Vot = { 30, 20 };
+            Console.WriteLine(Vote.MassVote(4, Vot));
             Console.ReadKey();
         }
     }
