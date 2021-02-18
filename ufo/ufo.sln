@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.808.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ufo", "ufo\ufo.csproj", "{80289C81-EAD2-471A-BF7E-2D41F4F0BD6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ufo_final", "ufo_final\ufo_final.csproj", "{461347D6-2D65-41F2-9EA8-E98C63D25A1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{80289C81-EAD2-471A-BF7E-2D41F4F0BD6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80289C81-EAD2-471A-BF7E-2D41F4F0BD6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80289C81-EAD2-471A-BF7E-2D41F4F0BD6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{461347D6-2D65-41F2-9EA8-E98C63D25A1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{461347D6-2D65-41F2-9EA8-E98C63D25A1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{461347D6-2D65-41F2-9EA8-E98C63D25A1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{461347D6-2D65-41F2-9EA8-E98C63D25A1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

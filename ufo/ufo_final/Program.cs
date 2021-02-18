@@ -26,25 +26,12 @@ namespace Level1Space
                         pow = 16;
                     }
                     sum = sum + (Convert.ToInt32(Convert.ToString(tempCharArr[j])) * Convert.ToInt32(Math.Pow(pow, j)));
-                    
+
                 }
                 result[i] = sum;
             }
-            
+
             return result;
-        }
-    }
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            int[] data = { 1234, 1777, 1234, 1777 };
-            int[] rez = new int[data.Length];
-            rez = Level1.UFO(2, data, true);
-            for (int i = 0; i < rez.Length; i++)
-            {
-                Console.Write(" {0}", rez[i]);
-            }
         }
     }
 }
