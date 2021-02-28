@@ -99,7 +99,7 @@ namespace MassVote
     {
         static void Main(string[] args)
         {
-            int[] Vot = { 30, 20 };
+            int[] Vot = { 30, 30, 30 };
             Console.WriteLine(Vote.MassVote(4, Vot));
             Console.ReadKey();
         }

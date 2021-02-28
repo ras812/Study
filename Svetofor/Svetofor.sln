@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svetofor", "Svetofor\Svetofor.csproj", "{00253003-F1E3-4AC0-9EF6-CAAF313FEF9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svetofor_final", "Svetofor_final\Svetofor_final.csproj", "{3BC25A1F-4E8C-497C-8AAA-A911975B6B6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00253003-F1E3-4AC0-9EF6-CAAF313FEF9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00253003-F1E3-4AC0-9EF6-CAAF313FEF9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00253003-F1E3-4AC0-9EF6-CAAF313FEF9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00253003-F1E3-4AC0-9EF6-CAAF313FEF9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BC25A1F-4E8C-497C-8AAA-A911975B6B6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BC25A1F-4E8C-497C-8AAA-A911975B6B6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BC25A1F-4E8C-497C-8AAA-A911975B6B6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BC25A1F-4E8C-497C-8AAA-A911975B6B6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E95653A-0A39-4AFE-9F76-9F97AC3AE77D}
+	EndGlobalSection
+EndGlobal
