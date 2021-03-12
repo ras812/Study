@@ -71,6 +71,7 @@ namespace Level1Space
                                 if (mapS2[m, n] == mapS1[i + m, j + n])
                                 {
                                     midFlag = 1;
+                                    continue;
                                 }
                                 else
                                 {
