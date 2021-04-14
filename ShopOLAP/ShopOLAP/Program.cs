@@ -50,33 +50,66 @@ namespace Level1Space
                 }
             }
 
-            // ArrayList arr = new ArrayList();
-            // int sum = 0;
-
-            // string s1 = parsedItems[0, 0];
-            // string s2 = null;
-
-            for (int i = 1; i < parsedItems.Length; i++)
+            Console.WriteLine("Parsed string array:");
+            for (int i = 0; i < parsedItems.GetUpperBound(0) + 1; i++)
             {
-                // s2 = parsedItems[i, 0];
-                // Console.WriteLine("{0} {1}", i, parsedItems[i-1,0].Equals(parsedItems[i,0]));
-                if (parsedItems[i - 1, 0].Equals(parsedItems[i, 0]))
+                for (int j = 0; j < 2; j++)
                 {
-                    Console.WriteLine("TRUE");
+                    Console.Write("{0} ", parsedItems[i, j]);
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+            Console.WriteLine("ArrayList:");
+
+            ArrayList arr = new ArrayList();
+            int sum = 0;
+
+            for (int i = 0; i < parsedItems.GetUpperBound(0); i++)  // last array index in demension
+            {
+                if (parsedItems.GetUpperBound(0) == 0)
+                {
+                    sum = Convert.ToInt32(parsedItems[i, 1]);
+                    arr.Add(parsedItems[i, 0] + " " + sum);
+                    sum = 0;
+                    break;
+                }
+
+
+                if (parsedItems.GetUpperBound(0) > 0)
+                {
+                    if (!parsedItems[i, 0].Equals(parsedItems[i + 1, 0]))
+                    {
+                        sum = Convert.ToInt32(parsedItems[i + 1, 1]);
+                        arr.Add(parsedItems[i + 1, 0] + " " + sum);
+                        sum = 0;
+                        /*if (i == parsedItems.GetUpperBound(0) - 1)
+                        {
+                            sum = Convert.ToInt32(parsedItems[i + 1, 1]);
+                            arr.Add(parsedItems[i + 1, 0] + " " + sum);
+                            sum = 0;
+                        }*/
+                    }
+
+                    if (parsedItems[i, 0].Equals(parsedItems[i + 1, 0]))
+                    {
+                        sum += Convert.ToInt32(parsedItems[i, 1]);
+                        if (i <= parsedItems.GetUpperBound(0) - 1)
+                        {
+                            sum = sum + Convert.ToInt32(parsedItems[i + 1, 1]);
+                            arr.Add(parsedItems[i, 0] + " " + sum);
+                            sum = 0;
+                        }
+                    }
                 }
             }
-                /*if (String.Equals(parsedItems[i, 0])) ;
-                {
-                    arr.Add(parsedItems[i - 1, 0] + " " + parsedItems[i - 1, 1]);
-                }
-            }
 
-            string[] arrString = (string[])arr.ToArray(typeof(string));
+        string[] arrString = (string[])arr.ToArray(typeof(string));
 
-            for (int i = 0; i < arrString.Length; i++)
-            {
-                Console.WriteLine(arr[i]);
-            }*/
+        for (int i = 0; i < arrString.Length; i++)
+        {
+            Console.WriteLine(arr[i]);
+        }
 
             /*for (int i = 0; i < items.Length; i++)
             {
@@ -99,8 +132,14 @@ namespace Level1Space
     {
         static void Main(string[] args)
         {
-            string[] shop = { "платье1 51", "сумка32 21", "платье1 11", "сумка23 21", "сумка128 41" };
+            // string[] shop = { "платье1 51", "сумка32 21", "платье1 11", "сумка23 21", "платье1 11", "сумка128 41", "платье1 11" };
+            // string[] shop = { "платье1 51", "платье1 11", "платье1 11", "платье1 11", "платье2 11" };
+            // string[] shop = { "платье1 51", "платье1 11", "платье1 11", "платье1 11", "платье1 11", "платье1 11" };
+            string[] shop = { "платье1 51", "платье1 11", "платье2 11", "платье2 11", "платье3 11", "платье3 11" };
+
+
             Level1.ShopOLAP(0, shop);
+            Console.ReadKey();
         }
     }
 }
