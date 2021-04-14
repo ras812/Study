@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace Level1Space
 {
@@ -7,14 +8,15 @@ namespace Level1Space
         public static string[] ShopOLAP(int N, string[] items)
         {
             Array.Sort(items);
-            for (int i = 0; i < items.Length; i++)
+            /*for (int i = 0; i < items.Length; i++)
             {
                 Console.Write("{0} ", items[i]);
             }
-            Console.WriteLine();
+            Console.WriteLine();*/
             string[,] parsedItems = new string[items.Length, 2];
             string temp = null;
             int spaceFinder = 0;
+
             for (int i = 0; i < items.Length; i++)
             {
                 spaceFinder = 0;
@@ -22,7 +24,6 @@ namespace Level1Space
 
                 for (int j = 0; j < items[i].Length; j++)
                 {
-
                     if (items[i][j] != ' ' && spaceFinder == 0)
                     {
                         spaceFinder = 0;
@@ -47,15 +48,37 @@ namespace Level1Space
                         parsedItems[i, 1] = temp;
                     }
                 }
-                
             }
 
-            for (int i = 0; i < items.Length; i++)
+            // ArrayList arr = new ArrayList();
+            // int sum = 0;
+
+            // string s1 = parsedItems[0, 0];
+            // string s2 = null;
+
+            for (int i = 1; i < parsedItems.Length; i++)
             {
-                Console.WriteLine(parsedItems[i, 0]);
+                // s2 = parsedItems[i, 0];
+                // Console.WriteLine("{0} {1}", i, parsedItems[i-1,0].Equals(parsedItems[i,0]));
+                if (parsedItems[i - 1, 0].Equals(parsedItems[i, 0]))
+                {
+                    Console.WriteLine("TRUE");
+                }
+            }
+                /*if (String.Equals(parsedItems[i, 0])) ;
+                {
+                    arr.Add(parsedItems[i - 1, 0] + " " + parsedItems[i - 1, 1]);
+                }
             }
 
-            for (int i = 0; i < items.Length; i++)
+            string[] arrString = (string[])arr.ToArray(typeof(string));
+
+            for (int i = 0; i < arrString.Length; i++)
+            {
+                Console.WriteLine(arr[i]);
+            }*/
+
+            /*for (int i = 0; i < items.Length; i++)
             {
                 Console.WriteLine(parsedItems[i, 1]);
             }
@@ -67,7 +90,7 @@ namespace Level1Space
                     Console.Write("{0} ",parsedItems[i, j]);
                 }
                 Console.WriteLine();
-            }
+            }*/
 
             return null;
         }
