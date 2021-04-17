@@ -49,18 +49,19 @@ namespace Level1Space
             int sum = 0;    // временная переменная для суммирования значений
             s = null;   // сброс стринговой переменной для нового блока
 
-            for (int i = 0; i < parsedItems.GetUpperBound(0); i++)  // last array index in demension
+            if (parsedItems.GetUpperBound(0) == 0)  // условие для одного элемента начального массива
             {
-                if (parsedItems.GetUpperBound(0) == 0)  // условие для одного элемента начального массива
-                {
-                    sum = Convert.ToInt32(parsedItems[i, 1]);
-                    arr.Add(parsedItems[i, 0] + " " + sum);
-                    sum = 0;
-                    break;
-                }
+                sum = Convert.ToInt32(parsedItems[0, 1]);
+                arr.Add(parsedItems[0, 0] + " " + sum);
+                sum = 0;
+            }
 
-                if (parsedItems.GetUpperBound(0) > 0)   // если элементов больше чем один
+            else
+            {
+
+                for (int i = 0; i < parsedItems.GetUpperBound(0); i++)  // last array index in demension
                 {
+
                     s = parsedItems[i, 0] + " ";    // в начале каждой итерации формируем строку со значением каждого итого элемента
 
                     if (!parsedItems[i, 0].Equals(parsedItems[i + 1, 0]))   // если текущее и последующее значение не совпадает
@@ -95,9 +96,7 @@ namespace Level1Space
                         s = null;
                         sum = 0;
                     }
-
                 }
-
             }
 
             string[] arrString = (string[])arr.ToArray(typeof(string)); // преобразовываем динамический массив в стринговый массив фиксированной длинны
