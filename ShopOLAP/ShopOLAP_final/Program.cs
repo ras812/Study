@@ -100,28 +100,9 @@ namespace Level1Space
 
             }
 
-        string[] arrString = (string[])arr.ToArray(typeof(string)); // преобразовываем динамический массив в стринговый массив фиксированной длинны
+            string[] arrString = (string[])arr.ToArray(typeof(string)); // преобразовываем динамический массив в стринговый массив фиксированной длинны
 
-        return arrString;
-        }
-    }
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // string[] shop = { "платье1 5", "сумка32 2", "платье1 1", "сумка23 2", "платье1 1", "сумка128 4", "платье1 1" };
-             string[] shop = { "платье1 51", "платье1 11", "платье1 11", "платье1 11", "платье2 11" };
-            // string[] shop = { "платье1 51", "платье1 11", "платье1 11", "платье1 11", "платье1 11", "платье1 11" };
-            // string[] shop = { "платье1 2", "платье1 4", "платье2 3", "платье2 5", "платье3 7", "платье3 9", "платье4 11" };
-
-            string[] arrS = Level1.ShopOLAP(0, shop);
-
-            for (int i = 0; i < arrS.Length; i++)
-            {
-                Console.WriteLine("{0} ", arrS[i]);
-            }
-
-            Console.ReadKey();
+            return arrString;
         }
     }
 }
