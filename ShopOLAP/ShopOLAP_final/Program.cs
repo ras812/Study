@@ -7,6 +7,11 @@ namespace Level1Space
     {
         public static string[] ShopOLAP(int N, string[] items)
         {
+            if (items.Length == 1)
+            {
+                return items;
+            }
+
             Array.Sort(items); // сортируем массив по возрастанию
             string[,] parsedItems = new string[items.Length, 2]; // инициализируем массив в две колонки
             string s = null;    // стринговая переменная для хранения временных значений
@@ -49,19 +54,11 @@ namespace Level1Space
             int sum = 0;    // временная переменная для суммирования значений
             s = null;   // сброс стринговой переменной для нового блока
 
-            if (parsedItems.GetUpperBound(0) == 0)  // условие для одного элемента начального массива
-            {
-                sum = Convert.ToInt32(parsedItems[0, 1]);
-                arr.Add(parsedItems[0, 0] + " " + sum);
-                sum = 0;
-            }
-
-            else
+            for (int i = 0; i < parsedItems.GetUpperBound(0); i++)  // last array index in demension
             {
 
-                for (int i = 0; i < parsedItems.GetUpperBound(0); i++)  // last array index in demension
+                if (parsedItems.GetUpperBound(0) > 0)   // если элементов больше чем один
                 {
-
                     s = parsedItems[i, 0] + " ";    // в начале каждой итерации формируем строку со значением каждого итого элемента
 
                     if (!parsedItems[i, 0].Equals(parsedItems[i + 1, 0]))   // если текущее и последующее значение не совпадает
@@ -82,7 +79,6 @@ namespace Level1Space
                         continue;
                     }
 
-
                     if (parsedItems[i, 0].Equals(parsedItems[i + 1, 0]))    // если текущее значение и последующее совпадают
                     {
 
@@ -96,7 +92,9 @@ namespace Level1Space
                         s = null;
                         sum = 0;
                     }
+
                 }
+
             }
 
             string[] arrString = (string[])arr.ToArray(typeof(string)); // преобразовываем динамический массив в стринговый массив фиксированной длинны

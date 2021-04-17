@@ -7,6 +7,11 @@ namespace Level1Space
     {
         public static string[] ShopOLAP(int N, string[] items)
         {
+            if (items.Length == 1)
+            {
+                return items;
+            }
+
             Array.Sort(items); // сортируем массив по возрастанию
             string[,] parsedItems = new string[items.Length, 2]; // инициализируем массив в две колонки
             string s = null;    // стринговая переменная для хранения временных значений
@@ -45,29 +50,23 @@ namespace Level1Space
                 }
             }
 
-            /*Console.WriteLine("One string parsing:");
-            for (int i = 0; i < parsedItems.GetUpperBound(0) + 1; i++)
-            {
-                Console.WriteLine(parsedItems[i, 0] + " " + parsedItems[i, 1]);
-            }*/
-
             ArrayList arr = new ArrayList();    // инициализируем динамический массив
             int sum = 0;    // временная переменная для суммирования значений
             s = null;   // сброс стринговой переменной для нового блока
 
-            if (parsedItems.GetUpperBound(0) == 0)  // условие для одного элемента начального массива
+            for (int i = 0; i < parsedItems.GetUpperBound(0); i++)  // last array index in demension
             {
-                sum = Convert.ToInt32(parsedItems[0, 1]);
-                arr.Add(parsedItems[0, 0] + " " + sum);
-                sum = 0;
-            }
-
-            else
-            {
-
-                for (int i = 0; i < parsedItems.GetUpperBound(0); i++)  // last array index in demension
+                /*if (parsedItems.GetUpperBound(0) < 1)  // условие для одного элемента начального массива
                 {
+                    sum = Convert.ToInt32(parsedItems[i, 1]);
+                    arr.Add(parsedItems[i, 0] + " " + sum);
+                    sum = 0;
+                    Console.WriteLine("One element");
+                    break;
+                }*/
 
+                if (parsedItems.GetUpperBound(0) > 0)   // если элементов больше чем один
+                {
                     s = parsedItems[i, 0] + " ";    // в начале каждой итерации формируем строку со значением каждого итого элемента
 
                     if (!parsedItems[i, 0].Equals(parsedItems[i + 1, 0]))   // если текущее и последующее значение не совпадает
@@ -102,22 +101,24 @@ namespace Level1Space
                         s = null;
                         sum = 0;
                     }
+
                 }
+
             }
 
-        string[] arrString = (string[])arr.ToArray(typeof(string)); // преобразовываем динамический массив в стринговый массив фиксированной длинны
+            string[] arrString = (string[])arr.ToArray(typeof(string)); // преобразовываем динамический массив в стринговый массив фиксированной длинны
 
-        return arrString;
+            return arrString;
         }
     }
     class Program
     {
         static void Main(string[] args)
         {
-             string[] shop = { "платье1 5", "сумка32 2", "платье1 1", "сумка23 2", "платье1 1", "сумка128 4", "платье1 1" };
+            // string[] shop = { "платье1 5", "сумка32 2", "платье1 1", "сумка23 2", "платье1 1", "сумка128 4", "платье1 1" };
             // string[] shop = { "платье1 51" };
             // string[] shop = { "платье1 51", "платье1 11", "платье1 11", "платье1 11", "платье1 11", "платье1 11" };
-            // string[] shop = { "платье1 2", "платье1 4", "платье2 3", "платье2 5", "платье3 7", "платье3 9", "платье4 11" };
+             string[] shop = { "платье1 2", "платье1 4", "платье2 3", "платье2 5", "платье3 7", "платье3 9", "платье4 11" };
 
             string[] arrS = Level1.ShopOLAP(0, shop);
 
